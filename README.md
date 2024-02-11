@@ -17,7 +17,7 @@ or you can skip npm install, and just copy and paste the source code into your c
 ## Register it as a local component
 
 ```js
-import { Marquee } from "@selemondev/svelte-marquee;
+import { Marquee } from "@selemondev/svelte-marquee";
 import "@selemondev/svelte-marquee/dist/style.css"
 ```
 
