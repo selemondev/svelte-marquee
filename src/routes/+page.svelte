@@ -50,7 +50,7 @@
 	];
 	let installCmd = `npm install @selemondev/svelte-marquee`;
 
-	const localImportSnippet = `import { Marquee } from "@selemondev/svelte-marquee;
+	const localImportSnippet = `import { Marquee } from "@selemondev/svelte-marquee";
 import "@selemondev/svelte-marquee/dist/style.css"`;
 
 	const fadeCodeSnippet = `<Marquee fade={true}>
