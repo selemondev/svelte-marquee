@@ -26,6 +26,7 @@
 			content:
 				"I'm thoroughly impressed with Marquee's performance and ease of use. It made implementing complex scrolling texts a breeze, and the support for TypeScript is top-notch.",
 		},
+
 		{
 			name: 'Sofia Garcia',
 			title: 'UI/UX Designer',
@@ -75,7 +76,7 @@ import "@selemondev/svelte-marquee/dist/style.css";`;
   <div>Content 2</div>
   <div>Content 3</div>
 </Marquee>`;
-	const customGapAndSpeedSnippet = `<Marquee innerClassName="gap-[3rem] [--duration:5s] [--gap:3rem]" fade={true}>
+	const customGapAndSpeedSnippet = `<Marquee class="gap-[3rem] [--duration:5s] [--gap:3rem]" innerClassName="gap-[3rem]" fade={true}>
   <div>Content 1</div>
   <div>Content 2</div>
   <div>Content 3</div>
@@ -292,17 +293,30 @@ import "@selemondev/svelte-marquee/dist/style.css";`;
 		<div class="space-y-1">
 			<h3 class="font-semibold">Custom gap and speed</h3>
 			<Marquee
-				innerClassName="gap-[3rem] [--duration:5s] [--gap:3rem]"
+				class="gap-[3rem] [--duration:5s] [--gap:3rem]"
+				innerClassName="gap-[3rem]"
 				fade={true}
 			>
-				{#each testimonials as testimonial (testimonial.name)}
-					<Card
-						avatar={testimonial.avatar}
-						name={testimonial.name}
-						title={testimonial.title}
-						content={testimonial.content}
-					/>
-				{/each}
+				<img
+					alt="Logo"
+					src="https://www.vectorlogo.zone/logos/google/google-ar21.svg"
+				/>
+				<img
+					alt="Logo"
+					src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg"
+				/>
+				<img
+					alt="Logo"
+					src="https://www.vectorlogo.zone/logos/apple/apple-ar21.svg"
+				/>
+				<img
+					alt="Logo"
+					src="https://www.vectorlogo.zone/logos/oracle/oracle-ar21.svg"
+				/>
+				<img
+					alt="Logo"
+					src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg"
+				/>
 			</Marquee>
 		</div>
 		<div class="space-y-1">
@@ -322,7 +336,7 @@ import "@selemondev/svelte-marquee/dist/style.css";`;
 			<div>Disable animation when user device prefers reduced motion.</div>
 			<Marquee
 				class="py-4 motion-reduce:overflow-auto"
-				innerclass="motion-reduce:animate-none motion-reduce:first:hidden"
+				innerClassName="motion-reduce:animate-none motion-reduce:first:hidden"
 			>
 				{#each testimonials as testimonial (testimonial.name)}
 					<Card

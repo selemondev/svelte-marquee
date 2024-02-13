@@ -10,11 +10,11 @@
 </script>
 
 <div
-	{...$$restProps}
-	class={cn('group flex gap-[1rem] overflow-hidden', {
+	class={cn(`group flex gap-[1rem] overflow-hidden ${$$restProps.class}`, {
 		'flex-row': direction === 'left',
 		'flex-col': direction !== 'left',
-	})}
+	}
+	)}
 	style={`mask-image: ${
 		fade
 			? `linear-gradient(${
