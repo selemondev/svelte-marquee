@@ -4,7 +4,7 @@
 	export let direction: Direction = 'left';
 	export let pauseOnHover: boolean = false;
 	export let reverse: boolean = false;
-	export let fade: boolean = true;
+	export let fade: boolean = false;
 	export let innerClassName: string = '';
 	export let numberOfCopies: number = 2;
 </script>
