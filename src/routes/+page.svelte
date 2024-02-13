@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Card from '../components/Card.svelte';
 	import { Marquee } from '$lib/index.js';
-	import GithubIcon from "../components/icons/GithubIcon.svelte"
+	import GithubIcon from '../components/icons/GithubIcon.svelte';
 	import { CodeBlock } from 'svhighlight';
 	import 'highlight.js/styles/base16/dracula.css';
-	
+
 	interface TestimonialProps {
 		name: string;
 		title: string;
@@ -51,7 +51,7 @@
 	let installCmd = `npm install @selemondev/svelte-marquee`;
 
 	const localImportSnippet = `import { Marquee } from "@selemondev/svelte-marquee";
-import "@selemondev/svelte-marquee/dist/style.css"`;
+import "@selemondev/svelte-marquee/dist/style.css";`;
 
 	const fadeCodeSnippet = `<Marquee fade={true}>
   <div>Content 1</div>
@@ -88,8 +88,11 @@ import "@selemondev/svelte-marquee/dist/style.css"`;
 </script>
 
 <svelte:head>
-  <title>Svelte Marquee Component</title>
-  <meta name="description" content="A Beautiful Marquee component for Svelte ✨" />
+	<title>Svelte Marquee Component</title>
+	<meta
+		name="description"
+		content="A Beautiful Marquee component for Svelte ✨"
+	/>
 </svelte:head>
 
 <div class="w-screen min-h-screen bg-stone-100/90">
