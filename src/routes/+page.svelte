@@ -2,8 +2,19 @@
   import Card from "../components/Card.svelte";
   import { Marquee } from "$lib/index.js";
   import GithubIcon from "../components/icons/GithubIcon.svelte";
-  import { CodeBlock } from "svhighlight";
-  import "highlight.js/styles/base16/dracula.css";
+  import CodeBlock from "shiki-code-block-svelte";
+  import { transformerCopyButton } from "@selemondev/shiki-transformer-copy-button";
+  import {
+    installCmd,
+    localImportSnippet,
+    fadeCodeSnippet,
+    reverseCodeSnippet,
+    pauseOnHoverSnippet,
+    verticalCodeSnippet,
+    customGapAndSpeedSnippet,
+    reducedMotionSnippet,
+    tailwindConfig,
+  } from "../utils/snippets/index.js";
 
   interface TestimonialProps {
     name: string;
@@ -49,72 +60,6 @@
         "Marquee Library has consistently delivered beyond our expectations. It's not just a tool; it's an asset that enhances productivity and creativity in our TypeScript applications.",
     },
   ];
-  let installCmd = `npm install @selemondev/svelte-marquee`;
-
-  const localImportSnippet = `import { Marquee } from "@selemondev/svelte-marquee";
-// If you are using TailwindCss, you don't need to import the styles below.
-import "@selemondev/svelte-marquee/dist/style.css";`;
-
-  const fadeCodeSnippet = `<Marquee fade={true}>
-  <div>Content 1</div>
-  <div>Content 2</div>
-  <div>Content 3</div>
-</Marquee>`;
-
-  const reverseCodeSnippet = `<Marquee reverse={true} fade={true}>
-  <div>Content 1</div>
-  <div>Content 2</div>
-  <div>Content 3</div>
-</Marquee>`;
-
-  const pauseOnHoverSnippet = `<Marquee pauseOnHover={true} fade={true}>
-  <div>Content 1</div>
-  <div>Content 2</div>
-  <div>Content 3</div>
-</Marquee>`;
-  const verticalCodeSnippet = `<Marquee direction="up" fade={true}>
-  <div>Content 1</div>
-  <div>Content 2</div>
-  <div>Content 3</div>
-</Marquee>`;
-  const customGapAndSpeedSnippet = `<Marquee class="gap-[3rem] [--duration:5s] [--gap:3rem]" innerClassName="gap-[3rem]" fade={true}>
-  <div>Content 1</div>
-  <div>Content 2</div>
-  <div>Content 3</div>
-</Marquee>`;
-  const reducedMotionSnippet = `<Marquee class="py-4 motion-reduce:overflow-auto" innerClassName="motion-reduce:animate-none motion-reduce:first:hidden">
-  <div>Content 1</div>
-  <div>Content 2</div>
-  <div>Content 3</div>
-</Marquee>`;
-  const tailwindConfig = `
-import animate from 'tailwindcss-animate';
-/** @type {import('tailwindcss').Config} */
-export default {
-	content: [
-	    // the rest of your content goes here
-		'./node_modules/@selemondev/svelte-marquee/dist/*.svelte'
-	],
-	theme: {
-		extend: {
-			keyframes: {
-				'marquee-left': {
-					from: { transform: 'translateX(0)' },
-					to: { transform: 'translateX(calc(-100% - var(--gap)))' }
-				},
-				'marquee-up': {
-					from: { transform: 'translateY(0)' },
-					to: { transform: 'translateY(calc(-100% - var(--gap)))' }
-				}
-			},
-			animation: {
-				'marquee-left': 'marquee-left var(--duration, 40s) linear infinite',
-				'marquee-up': 'marquee-up var(--duration, 40s) linear infinite'
-			}
-		}
-	},
-	plugins: [animate]
-};`;
 </script>
 
 <svelte:head>
@@ -125,7 +70,7 @@ export default {
   />
 </svelte:head>
 
-<div class="min-h-screen bg-stone-100/90">
+<div class="min-h-screen w-full bg-[#eee]">
   <div class="max-w-screen-lg px-4 py-6 mx-auto space-y-4">
     <div class="space-y-2 md:flex md:justify-between">
       <div>
@@ -184,15 +129,23 @@ export default {
         {/each}
       </Marquee>
     </div>
-    <div class="space-y-1">
+    <div class="space-y-1 w-full">
       <h2 class="text-lg font-semibold">Installation</h2>
       <CodeBlock
+        lang="bash"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={installCmd}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="bash"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
       <div class="text-sm">
         or you can skip npm install, and just copy and paste the source code
@@ -212,18 +165,30 @@ export default {
         </p>
       </div>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={tailwindConfig}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="javascript"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
-	  <div class="pt-1 text-sm">
+      <div class="pt-1 text-sm">
         <p>
-			The reason for doing the above is because of a bug that we are facing when bundling the component. You can checkout the discussion <a class="text-blue-500 underline transition-all duration-200 ease-in hover:text-blue-600" href="https://github.com/selemondev/svelte-marquee/issues/6">
-			here.
-		</a>
+          The reason for doing the above is because of a bug that we are facing
+          when bundling the component. You can checkout the discussion <a
+            class="text-blue-500 underline transition-all duration-200 ease-in hover:text-blue-600"
+            href="https://github.com/selemondev/svelte-marquee/issues/6"
+          >
+            here.
+          </a>
         </p>
       </div>
     </div>
@@ -231,12 +196,20 @@ export default {
     <div class="space-y-1">
       <h3 class="font-semibold">Register it as a local component</h3>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={localImportSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="javascript"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
 
@@ -257,12 +230,20 @@ export default {
     <div class="space-y-1">
       <h3 class="font-semibold">Code</h3>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={fadeCodeSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="html"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
     <hr class="border-stone-200" />
@@ -282,12 +263,20 @@ export default {
     <div class="space-y-1">
       <h3 class="font-semibold">Code</h3>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={reverseCodeSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="html"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
     <hr class="border-stone-200" />
@@ -307,12 +296,20 @@ export default {
     <div>
       <h3 class="font-semibold">Code</h3>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={pauseOnHoverSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="html"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
     <hr class="border-stone-200" />
@@ -334,12 +331,20 @@ export default {
     <div class="space-y-1">
       <h3 class="font-semibold">Code</h3>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={verticalCodeSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="html"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
     <hr class="border-stone-200" />
@@ -375,12 +380,20 @@ export default {
     <div class="space-y-1">
       <h3 class="font-semibold">Code</h3>
       <CodeBlock
+        lang="javascript"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={customGapAndSpeedSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="html"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
     <hr class="border-stone-200" />
@@ -404,13 +417,62 @@ export default {
     <div class="space-y-1">
       <h3 class="font-semibold">Code</h3>
       <CodeBlock
+        lang="html"
+        theme={{
+          light: "vitesse-light",
+          dark: "vitesse-dark",
+        }}
         code={reducedMotionSnippet}
-        showHeader={false}
-        codeTextClasses="text-black"
-        showLineNumbers={false}
-        background="bg-white"
-        language="html"
+        transformers={[
+          transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
+            copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
+          }),
+        ]}
       />
     </div>
   </div>
 </div>
+
+<style>
+  @media (prefers-color-scheme: dark) {
+    :global(.shiki),
+    :global(.shiki span) {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+      /* Optional, if you also want font styles */
+      font-style: var(--shiki-dark-font-style) !important;
+      font-weight: var(--shiki-dark-font-weight) !important;
+      text-decoration: var(--shiki-dark-text-decoration) !important;
+    }
+  }
+  :global(html.dark .shiki),
+  :global(html.dark .shiki span) {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+
+  :global(.shiki--code--block) {
+    width: 100%;
+  }
+  :global(pre) {
+    z-index: 1;
+    padding: 20px 24px;
+    border-radius: 10px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+    background-color: #f9f9f9 !important;
+  }
+  :global(code) {
+    display: block;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+</style>
