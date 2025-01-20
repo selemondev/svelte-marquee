@@ -462,7 +462,7 @@
   }
   :global(pre) {
     z-index: 1;
-    padding: 20px 24px;
+    padding: 15px 24px;
     border-radius: 10px;
     overflow-x: auto;
     -ms-overflow-style: none;
