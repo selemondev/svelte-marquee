@@ -18,7 +18,7 @@ or you can skip the npm install, and just copy and paste the source code into yo
 
 ```js
 import { Marquee } from "@selemondev/svelte-marquee";
-import "@selemondev/svelte-marquee/dist/style.css"
+// import "@selemondev/svelte-marquee/dist/style.css"
 ```
 
 ## Usage
