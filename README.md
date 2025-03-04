@@ -8,9 +8,18 @@
 
 ## Installation
 
-```bash
+```bash [npm]
 npm install @selemondev/svelte-marquee
 ```
+
+```bash [pnpm]
+pnpm install @selemondev/svelte-marquee
+```
+
+```bash [yarn]
+yarn add @selemondev/svelte-marquee
+```
+
 or you can skip the npm install, and just copy and paste the source code into your component like Shadcn Svelte (don't forget to also copy the tailwind config if you do this).
 
 
@@ -18,12 +27,11 @@ or you can skip the npm install, and just copy and paste the source code into yo
 
 ```js
 import { Marquee } from "@selemondev/svelte-marquee";
-// import "@selemondev/svelte-marquee/dist/style.css"
 ```
 
 ## Usage
 
-The library has a few props that are self-explanatory; you can get it running in no time. See the web examples for more details.
+The library has a few props that are self-explanatory; you can get it running in no time. See the web examples for more details. Check out the [documentation](https://svelte-marquee.vercel.app) for more information.
 
 ```js
 <Marquee 
