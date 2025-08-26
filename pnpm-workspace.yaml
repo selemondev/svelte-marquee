@@ -1,5 +1,2 @@
 onlyBuiltDependencies:
   - svelte-preprocess
-
-overrides:
-  shiki-code-block-svelte: link:../shiki-code-block/packages/svelte
