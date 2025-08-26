@@ -49,18 +49,17 @@ jobs:
       - name: Commit changes
         id: commit
         run: |
-          set -e
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          BRANCH="chore/taze-deps-$(date -u +'%Y-%m-%d')"
-          echo "BRANCH=$BRANCH" >> $GITHUB_OUTPUT
-          git checkout -B "$BRANCH"
+
+          # Stay on master; stage changes
           git add -A
           if git diff --cached --quiet; then
-            echo "no_changes=true" >> $GITHUB_ENV
+            echo "no_changes=true" >> "$GITHUB_ENV"
           else
             git commit -m "chore(deps): weekly update via taze (pnpm)"
-            echo "no_changes=false" >> $GITHUB_ENV
+            echo "no_changes=false" >> "$GITHUB_ENV"
           fi
 
       - name: Create Pull Request
