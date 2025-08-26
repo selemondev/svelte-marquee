@@ -46,30 +46,32 @@ jobs:
       - name: Build
         run: pnpm -r build
 
-      - name: Commit changes
-        id: commit
+      - name: Check for changes
+        id: changes
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Stay on master; stage changes
+          
           git add -A
           if git diff --cached --quiet; then
-            echo "no_changes=true" >> "$GITHUB_ENV"
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected"
           else
-            git commit -m "chore(deps): weekly update via taze (pnpm)"
-            echo "no_changes=false" >> "$GITHUB_ENV"
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected"
           fi
 
       - name: Create Pull Request
-        if: env.no_changes == 'false'
+        if: steps.changes.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: ${{ steps.commit.outputs.BRANCH }}  # head branch
-          base: master                                 # your default branch
+          branch: deps/weekly-update-${{ github.run_number }}
+          base: master
           delete-branch: true
           title: "chore(deps): weekly update via taze (pnpm)"
           body: |
             Automated weekly dependency update using `taze -w` with pnpm.
+            
+            This PR was automatically created by the weekly dependency update workflow.
           commit-message: "chore(deps): weekly update via taze (pnpm)"
