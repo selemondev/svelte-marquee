@@ -1,0 +1,81 @@
+name: Weekly dependency update
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  taze-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install dependencies (pnpm)
+        run: pnpm install --frozen-lockfile
+
+      - name: Update dependencies with taze (workspaces)
+        run: pnpx taze@latest -w
+
+      - name: Refresh lockfile (pnpm)
+        run: pnpm install --lockfile-only
+
+      - name: Build (optional)
+        run: pnpm -r build
+
+      - name: Commit changes
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="chore/taze-deps-$(date -u +'%Y-%m-%d')"
+          git checkout -b "$BRANCH"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No dependency updates to commit."
+            echo "no_changes=true" >> $GITHUB_ENV
+          else
+            git commit -m "chore(deps): weekly update via taze (pnpm)"
+            echo "no_changes=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create Pull Request
+        if: env.no_changes == 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/taze-deps
+          delete-branch: true
+          title: "chore(deps): weekly update via taze (pnpm)"
+          body: |
+            Automated weekly dependency update using `taze -w` with pnpm.
+
+            - Ran `taze -w` to update dependency ranges.
+            - Regenerated pnpm-lock.yaml.
+            - Please review changes and ensure CI passes.
+          commit-message: "chore(deps): weekly update via taze (pnpm)"
+          labels: |
+            dependencies
+            automated
+          assignees: |
+            ${{ github.actor }}
+          draft: false
