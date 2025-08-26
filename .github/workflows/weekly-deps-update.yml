@@ -31,6 +31,9 @@ jobs:
           node-version: "20"
           cache: "pnpm"
 
+      - name: Verify pnpm
+        run: pnpm --version
+
       - name: Install dependencies (pnpm)
         run: pnpm install --frozen-lockfile
 
@@ -64,7 +67,8 @@ jobs:
         if: env.no_changes == 'false'
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: ${{ steps.commit.outputs.BRANCH }}
+          branch: ${{ steps.commit.outputs.BRANCH }}  # head branch
+          base: master                                 # your default branch
           delete-branch: true
           title: "chore(deps): weekly update via taze (pnpm)"
           body: |
