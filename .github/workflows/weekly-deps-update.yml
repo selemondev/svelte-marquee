@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 
 jobs:
   taze-update:
@@ -66,6 +67,7 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: deps/weekly-update-${{ github.run_number }}
           base: master
           delete-branch: true
