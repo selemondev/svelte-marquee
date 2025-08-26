@@ -3,7 +3,7 @@
 	import CodeBlock from 'shiki-code-block-svelte';
 
 	const packageManagers = ['bun', 'pnpm', 'yarn', 'npm'];
-	let selectedPackageManager = $state('pnpm');
+	let selectedPackageManager = $state('bun');
 	let { lang, bun, pnpm, yarn, npm } = $props();
 	const getInstallCmd = () => {
 		switch (selectedPackageManager) {
