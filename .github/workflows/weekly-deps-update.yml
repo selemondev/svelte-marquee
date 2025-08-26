@@ -44,11 +44,13 @@ jobs:
         run: pnpm -r build
 
       - name: Commit changes
+        id: commit
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          BRANCH="chore/taze-deps"
+          BRANCH="chore/taze-deps-$(date -u +'%Y-%m-%d')"
+          echo "BRANCH=$BRANCH" >> $GITHUB_OUTPUT
           git checkout -B "$BRANCH"
           git add -A
           if git diff --cached --quiet; then
@@ -62,11 +64,9 @@ jobs:
         if: env.no_changes == 'false'
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: chore/taze-deps
+          branch: ${{ steps.commit.outputs.BRANCH }}
           delete-branch: true
           title: "chore(deps): weekly update via taze (pnpm)"
           body: |
             Automated weekly dependency update using `taze -w` with pnpm.
           commit-message: "chore(deps): weekly update via taze (pnpm)"
-          labels: dependencies, automated
-          assignees: ${{ github.actor }}
