@@ -25,8 +25,8 @@ importers:
         version: 1.0.7(tailwindcss@3.4.17)
     devDependencies:
       '@sveltejs/adapter-auto':
-        specifier: ^3.3.1
-        version: 3.3.1(@sveltejs/kit@2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19))
+        specifier: ^6.1.0
+        version: 6.1.0(@sveltejs/kit@2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19))
       '@sveltejs/adapter-vercel':
         specifier: ^5.10.2
         version: 5.10.2(@sveltejs/kit@2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19))(rollup@4.48.1)
@@ -608,8 +608,8 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
-  '@sveltejs/adapter-auto@3.3.1':
-    resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
+  '@sveltejs/adapter-auto@6.1.0':
+    resolution: {integrity: sha512-shOuLI5D2s+0zTv2ab5M5PqfknXqWbKi+0UwB9yLTRIdzsK1R93JOO8jNhIYSHdW+IYXIYnLniu+JZqXs7h9Wg==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -1211,9 +1211,6 @@ packages:
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
-
-  import-meta-resolve@4.1.0:
-    resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
 
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
@@ -2387,10 +2384,9 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19))':
+  '@sveltejs/adapter-auto@6.1.0(@sveltejs/kit@2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19))':
     dependencies:
       '@sveltejs/kit': 2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19)
-      import-meta-resolve: 4.1.0
 
   '@sveltejs/adapter-vercel@5.10.2(@sveltejs/kit@2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.19))(svelte@5.38.7)(vite@5.4.19))(rollup@4.48.1)':
     dependencies:
@@ -3112,8 +3108,6 @@ snapshots:
     dependencies:
       parent-module: 1.0.1
       resolve-from: 4.0.0
-
-  import-meta-resolve@4.1.0: {}
 
   imurmurhash@0.1.4: {}
 
