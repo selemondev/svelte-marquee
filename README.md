@@ -20,26 +20,26 @@
 
 ## Installation
 
-<!-- automd:pm-install name="@selemondev/svelte-marquee" dev -->
+<!-- automd:pm-install name="@selemondev/svelte-marquee" -->
 
 ```sh
 # ✨ Auto-detect
-npx nypm install -D @selemondev/svelte-marquee
+npx nypm install @selemondev/svelte-marquee
 
 # npm
-npm install -D @selemondev/svelte-marquee
+npm install @selemondev/svelte-marquee
 
 # yarn
-yarn add -D @selemondev/svelte-marquee
+yarn add @selemondev/svelte-marquee
 
 # pnpm
-pnpm install -D @selemondev/svelte-marquee
+pnpm install @selemondev/svelte-marquee
 
 # bun
-bun install -D @selemondev/svelte-marquee
+bun install @selemondev/svelte-marquee
 
 # deno
-deno install --dev @selemondev/svelte-marquee
+deno install @selemondev/svelte-marquee
 ```
 
 <!-- /automd -->
