@@ -7,7 +7,7 @@
     "build": "vite build && npm run package",
     "preview": "vite preview",
     "build:css": "tailwindcss -i ./src/assets/css/tailwind.css -o ./dist/style.css",
-    "package": "svelte-kit sync && svelte-package && publint && pnpm build:css",
+    "package": "svelte-kit sync && svelte-package && pnpm build:css && publint",
     "prepublishOnly": "npm run package",
     "generate:release:minor": "npx changelogen@latest --release --minor",
     "generate:release:major": "npx changelogen@latest --release --major",
