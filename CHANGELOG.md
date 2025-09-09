@@ -1,6 +1,54 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Remove local link ([757eef7](https://github.com/selemondev/svelte-marquee/commit/757eef7))
+
+### 💅 Refactors
+
+- Vercel adapter ([58c33a1](https://github.com/selemondev/svelte-marquee/commit/58c33a1))
+
+### 📖 Documentation
+
+- Update ([2a5e9ff](https://github.com/selemondev/svelte-marquee/commit/2a5e9ff))
+- Add multi-tab install UI ([346abc3](https://github.com/selemondev/svelte-marquee/commit/346abc3))
+- Default state ([7444662](https://github.com/selemondev/svelte-marquee/commit/7444662))
+- Update README.md file ([555a674](https://github.com/selemondev/svelte-marquee/commit/555a674))
+
+### 🏡 Chore
+
+- **release:** V0.0.3 ([90f73ac](https://github.com/selemondev/svelte-marquee/commit/90f73ac))
+- Release v0.0.3 ([2d8b5a4](https://github.com/selemondev/svelte-marquee/commit/2d8b5a4))
+- Remove unused tailwindcss package style path ([df0b1ba](https://github.com/selemondev/svelte-marquee/commit/df0b1ba))
+- Use node version 22 ([4c4c823](https://github.com/selemondev/svelte-marquee/commit/4c4c823))
+- Update dependencies ([a5a14ea](https://github.com/selemondev/svelte-marquee/commit/a5a14ea))
+- Remove workspace file ([24d370b](https://github.com/selemondev/svelte-marquee/commit/24d370b))
+- Add github workflow ([feebe12](https://github.com/selemondev/svelte-marquee/commit/feebe12))
+- Update Github workflow ([6affbc2](https://github.com/selemondev/svelte-marquee/commit/6affbc2))
+- Update ([b1a64f9](https://github.com/selemondev/svelte-marquee/commit/b1a64f9))
+- Update workflow ([af93cf1](https://github.com/selemondev/svelte-marquee/commit/af93cf1))
+- Update workflow ([a918c7c](https://github.com/selemondev/svelte-marquee/commit/a918c7c))
+- Update workflow ([c899565](https://github.com/selemondev/svelte-marquee/commit/c899565))
+- Update workflow ([6b7c2ed](https://github.com/selemondev/svelte-marquee/commit/6b7c2ed))
+- Update workflow ([c0037e8](https://github.com/selemondev/svelte-marquee/commit/c0037e8))
+- Add .vercel file to gitignore ([fe1c3cb](https://github.com/selemondev/svelte-marquee/commit/fe1c3cb))
+- Set package-ecosystem to 'npm' in dependabot config ([2c77a81](https://github.com/selemondev/svelte-marquee/commit/2c77a81))
+- **deps-dev:** Bump @sveltejs/adapter-auto from 3.3.1 to 6.1.0 ([1ea13dc](https://github.com/selemondev/svelte-marquee/commit/1ea13dc))
+- **deps-dev:** Bump eslint-plugin-svelte from 2.46.1 to 3.12.2 ([f109f16](https://github.com/selemondev/svelte-marquee/commit/f109f16))
+- **deps-dev:** Bump @typescript-eslint/eslint-plugin ([70f7bd8](https://github.com/selemondev/svelte-marquee/commit/70f7bd8))
+- **deps-dev:** Bump publint from 0.1.16 to 0.3.12 ([425ecfe](https://github.com/selemondev/svelte-marquee/commit/425ecfe))
+- Refactor package script ([febae6f](https://github.com/selemondev/svelte-marquee/commit/febae6f))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v0.0.3
 
 [compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.0.2...v0.0.3)
