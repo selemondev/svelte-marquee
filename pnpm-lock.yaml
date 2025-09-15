@@ -35,7 +35,7 @@ importers:
         version: 2.37.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.38.7)(vite@5.4.20))(svelte@5.38.7)(vite@5.4.20)
       '@sveltejs/package':
         specifier: ^2.5.0
-        version: 2.5.0(svelte@5.38.7)(typescript@5.9.2)
+        version: 2.5.1(svelte@5.38.7)(typescript@5.9.2)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.4
         version: 4.0.4(svelte@5.38.7)(vite@5.4.20)
@@ -640,8 +640,8 @@ packages:
       '@opentelemetry/api':
         optional: true
 
-  '@sveltejs/package@2.5.0':
-    resolution: {integrity: sha512-qpB91oWEraOXA4l1ldpGtMc/rLCthbf1ACw/1oroKxvT3sd2NXPd/+NLhIk5FCvd0IUSEZGYa86K+D94GWW2Zw==}
+  '@sveltejs/package@2.5.1':
+    resolution: {integrity: sha512-n0XRW7H7rD2AbdDsTD1KjXBztU96eMMuxPYwL9C+ZS8H8M1mS5NgmqFaSe8wKR40RU1KjLsqSWMnzsxRfG2j+A==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     peerDependencies:
@@ -1706,6 +1706,7 @@ packages:
 
   shiki-code-block-svelte@0.0.3-beta.2:
     resolution: {integrity: sha512-H7CJtsB/erhj4GmP/1E/rRkrCwhoF7YImMO3J9xJLGou4lh8tjsBod1ycvVzBcGUkuoWtpVtxFmO1LhzXbaqeA==}
+    deprecated: '"This package has been deprecated. Please use shiki-block-svelte instead."'
     peerDependencies:
       shiki: ^2.0.3
       svelte: ^5.0.0
@@ -1828,8 +1829,8 @@ packages:
       typescript:
         optional: true
 
-  svelte2tsx@0.7.42:
-    resolution: {integrity: sha512-PSNrKS16aVdAajoFjpF5M0t6TA7ha7GcKbBajD9RG3M+vooAuvLnWAGUSC6eJL4zEOVbOWKtcS2BuY4rxPljoA==}
+  svelte2tsx@0.7.43:
+    resolution: {integrity: sha512-TtxMuk520th4ZEvUQrhbDAyyQ1I+kc5dZCA4ChOLlbVXZfqenrY45iTH27DpLyx/u4STEz8O3hkGm5goTS8JhQ==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
@@ -2429,14 +2430,14 @@ snapshots:
       svelte: 5.38.7
       vite: 5.4.20
 
-  '@sveltejs/package@2.5.0(svelte@5.38.7)(typescript@5.9.2)':
+  '@sveltejs/package@2.5.1(svelte@5.38.7)(typescript@5.9.2)':
     dependencies:
       chokidar: 4.0.3
       kleur: 4.1.5
       sade: 1.8.1
       semver: 7.7.2
       svelte: 5.38.7
-      svelte2tsx: 0.7.42(svelte@5.38.7)(typescript@5.9.2)
+      svelte2tsx: 0.7.43(svelte@5.38.7)(typescript@5.9.2)
     transitivePeerDependencies:
       - typescript
 
@@ -3688,7 +3689,7 @@ snapshots:
       postcss-load-config: 4.0.2(postcss@8.5.6)
       typescript: 5.9.2
 
-  svelte2tsx@0.7.42(svelte@5.38.7)(typescript@5.9.2):
+  svelte2tsx@0.7.43(svelte@5.38.7)(typescript@5.9.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
