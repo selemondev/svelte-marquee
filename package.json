@@ -74,7 +74,7 @@
   "dependencies": {
     "@selemondev/shiki-transformer-copy-button": "^0.0.2",
     "clsx": "^2.1.1",
-    "shiki-code-block-svelte": "^0.0.3-beta.2",
+    "shiki-code-block-svelte": "^0.0.6",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7"
   },

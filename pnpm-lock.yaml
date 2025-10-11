@@ -15,8 +15,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       shiki-code-block-svelte:
-        specifier: ^0.0.3-beta.2
-        version: 0.0.3-beta.2(shiki@2.5.0)(svelte@5.38.7)
+        specifier: ^0.0.6
+        version: 0.0.6(shiki@2.5.0)(svelte@5.38.7)
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -1698,12 +1698,12 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki-code-block-svelte@0.0.3-beta.2:
-    resolution: {integrity: sha512-H7CJtsB/erhj4GmP/1E/rRkrCwhoF7YImMO3J9xJLGou4lh8tjsBod1ycvVzBcGUkuoWtpVtxFmO1LhzXbaqeA==}
+  shiki-code-block-svelte@0.0.6:
+    resolution: {integrity: sha512-VsVtfa6FQVtYW5ZEJ+ibIHoVGizbUQoqvvsh0o9Q0x4TebvkdG168uoqBvk8n6fknbD99NGd4C48JS8C/ugU2g==}
     deprecated: '"This package has been deprecated. Please use shiki-block-svelte instead."'
     peerDependencies:
-      shiki: ^2.0.3
-      svelte: ^5.0.0
+      shiki: ^3.12.2
+      svelte: ^5.38.8
 
   shiki@2.5.0:
     resolution: {integrity: sha512-mI//trrsaiCIPsja5CNfsyNOqgAZUb6VpJA+340toL42UpzQlXpwRV9nch69X6gaUxrr9kaOOa6e3y3uAkGFxQ==}
@@ -3543,7 +3543,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki-code-block-svelte@0.0.3-beta.2(shiki@2.5.0)(svelte@5.38.7):
+  shiki-code-block-svelte@0.0.6(shiki@2.5.0)(svelte@5.38.7):
     dependencies:
       shiki: 2.5.0
       svelte: 5.38.7
