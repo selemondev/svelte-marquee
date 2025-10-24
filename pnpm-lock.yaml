@@ -46,8 +46,8 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4(svelte@5.38.7)(vite@5.4.20(@types/node@24.9.1)(lightningcss@1.30.2))
       '@types/eslint':
-        specifier: 8.56.0
-        version: 8.56.0
+        specifier: 8.56.12
+        version: 8.56.12
       '@types/node':
         specifier: ^24.9.1
         version: 24.9.1
@@ -751,8 +751,8 @@ packages:
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
-  '@types/eslint@8.56.0':
-    resolution: {integrity: sha512-FlsN0p4FhuYRjIxpbdXovvHQhtlG05O1GG/RNWvdAxTboR438IOTwmrY/vLA+Xfgg06BTkP045M3vpFwTMv1dg==}
+  '@types/eslint@8.56.12':
+    resolution: {integrity: sha512-03ruubjWyOHlmljCVoxSuNDdmfZDzsrrz0P2LeJsOXr+ZwFQ+0yQIwNCwt/GYhV7Z31fgtXJTAEs+FYlEL851g==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -2550,7 +2550,7 @@ snapshots:
 
   '@types/cookie@0.6.0': {}
 
-  '@types/eslint@8.56.0':
+  '@types/eslint@8.56.12':
     dependencies:
       '@types/estree': 1.0.8
       '@types/json-schema': 7.0.15
