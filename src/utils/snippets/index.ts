@@ -3,7 +3,6 @@ export const yarnInstallCmd = `yarn add @selemondev/svelte-marquee`;
 export const pnpmInstallCmd = `pnpm install @selemondev/svelte-marquee`;
 export const bunInstallCmd = `bun add @selemondev/svelte-marquee`;
 export const localImportSnippet = `import { Marquee } from "@selemondev/svelte-marquee";
-// If you are using TailwindCss, you don't need to import the styles below.
 import "@selemondev/svelte-marquee/dist/style.css";`;
 
 export const fadeCodeSnippet = `<Marquee fade={true}>

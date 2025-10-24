@@ -146,47 +146,8 @@
                 or you can skip npm install, and just copy and paste the source
                 code into your component like
                 <a class="underline" href="https://www.shadcn-svelte.com/">
-                    Shadcn Svelte
+                    Shadcn Svelte.
                 </a>
-                (don't forget to also copy the tailwind config if you do this).
-            </div>
-        </div>
-
-        <div class="space-y-1">
-            <h2 class="text-lg font-semibold">Using TailwindCss</h2>
-            <div class="text-sm">
-                <p>
-                    If you are using TailwindCss, it is recommended to do as
-                    shown below:
-                </p>
-            </div>
-            <CodeBlock
-                lang="javascript"
-                theme={{
-                    light: "vitesse-light",
-                    dark: "vitesse-light",
-                }}
-                code={tailwindConfig}
-                transformers={[
-                    transformerCopyButton({
-                        duration: 2000,
-                        display: "ready",
-                        successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
-                        copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
-                    }),
-                ]}
-            />
-            <div class="pt-1 text-sm">
-                <p>
-                    The reason for doing the above is because of a bug that we
-                    are facing when bundling the component. You can checkout the
-                    discussion <a
-                        class="text-blue-500 underline transition-all duration-200 ease-in hover:text-blue-600"
-                        href="https://github.com/selemondev/svelte-marquee/issues/6"
-                    >
-                        here.
-                    </a>
-                </p>
             </div>
         </div>
 

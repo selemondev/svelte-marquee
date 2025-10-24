@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.0.4...v0.1.0)
+
+### 🚀 Enhancements
+
+- Migrate to Tailwind v4 and optimize CSS output ([5a606bb](https://github.com/selemondev/svelte-marquee/commit/5a606bb))
+
+### 📖 Documentation
+
+- Update package install commands ([a671769](https://github.com/selemondev/svelte-marquee/commit/a671769))
+
+### 🏡 Chore
+
+- **release:** V0.0.4 ([ac726da](https://github.com/selemondev/svelte-marquee/commit/ac726da))
+- **deps-dev:** Bump vite in the npm_and_yarn group across 1 directory ([c39d308](https://github.com/selemondev/svelte-marquee/commit/c39d308))
+- **deps-dev:** Bump @sveltejs/package from 2.5.0 to 2.5.4 ([060eadb](https://github.com/selemondev/svelte-marquee/commit/060eadb))
+- Migrate to shiki-block-svelte and update dependencies ([80bb442](https://github.com/selemondev/svelte-marquee/commit/80bb442))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.0.3...v0.0.4)
