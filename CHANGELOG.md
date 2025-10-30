@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.1.1...v0.1.1)
+
+### 🏡 Chore
+
+- **deps-dev:** Bump @typescript-eslint/parser from 6.21.0 to 8.46.2 ([223c80d](https://github.com/selemondev/svelte-marquee/commit/223c80d))
+- Add entry points ([82cdb76](https://github.com/selemondev/svelte-marquee/commit/82cdb76))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.0
 
 [compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.0.4...v0.1.0)
