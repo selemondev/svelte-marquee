@@ -2,7 +2,6 @@
   "name": "@selemondev/svelte-marquee",
   "version": "0.1.2",
   "description": "A Beautiful Marquee component for Svelte ✨",
-  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
     "dev": "vite dev",
