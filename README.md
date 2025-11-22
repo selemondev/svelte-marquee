@@ -11,7 +11,6 @@
 
 [![npm version](https://img.shields.io/npm/v/@selemondev/svelte-marquee?color=green)](https://npmjs.com/package/@selemondev/svelte-marquee)
 [![npm downloads](https://img.shields.io/npm/dm/@selemondev/svelte-marquee?color=green)](https://npm.chart.dev/@selemondev/svelte-marquee)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@selemondev/svelte-marquee?color=green)](https://bundlephobia.com/package/@selemondev/svelte-marquee)
 [![install size](https://badgen.net/packagephobia/install/@selemondev/svelte-marquee?color=green)](https://packagephobia.com/result?p=@selemondev/svelte-marquee)
 [![codecov](https://img.shields.io/codecov/c/gh/selemondev/svelte-marquee?color=green)](https://codecov.io/gh/selemondev/svelte-marquee)
 [![license](https://img.shields.io/github/license/selemondev/svelte-marquee?color=green)](https://github.com/selemondev/svelte-marquee/blob/main/LICENSE)
