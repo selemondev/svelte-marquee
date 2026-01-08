@@ -81,5 +81,5 @@
     "tailwindcss": "^4.1.16",
     "tailwindcss-animate": "^1.0.7"
   },
-  "packageManager": "pnpm@10.19.0"
+  "packageManager": "pnpm@10.27.0"
 }
