@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.1.4
+
+[compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.1.3...v0.1.4)
+
+### 📖 Documentation
+
+- Remove bundle size badge from README ([53b214a](https://github.com/selemondev/svelte-marquee/commit/53b214a))
+
+### 🏡 Chore
+
+- Set icon ([8c4a946](https://github.com/selemondev/svelte-marquee/commit/8c4a946))
+- Update dependencies ([5c3056d](https://github.com/selemondev/svelte-marquee/commit/5c3056d))
+- **release:** V0.1.3 ([58ddc02](https://github.com/selemondev/svelte-marquee/commit/58ddc02))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v0.1.3
 
 [compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.1.3...v0.1.3)
