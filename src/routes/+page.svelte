@@ -371,7 +371,7 @@
         <div class="space-y-1">
             <h3 class="font-semibold">Code</h3>
             <CodeBlock
-                lang="html"
+                lang="javascript"
                 themes={{
                     light: "vitesse-light",
                     dark: "vitesse-light",
