@@ -401,14 +401,13 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
         position: relative;
-        background-color: #f9f9f9 !important;
     }
     :global(code) {
         display: block;
         line-height: 1.7;
         font-size: 15px;
     }
-    ::-webkit-scrollbar {
+    :global(::-webkit-scrollbar) {
         display: none;
     }
 </style>
