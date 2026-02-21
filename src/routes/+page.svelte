@@ -16,7 +16,6 @@
         verticalCodeSnippet,
         customGapAndSpeedSnippet,
         reducedMotionSnippet,
-        tailwindConfig,
     } from "../utils/snippets/index.js";
     import { transformerCopyButton } from "../utils/transformer-copy-button.js";
 
@@ -75,7 +74,7 @@
 </svelte:head>
 
 <div class="min-h-screen w-full bg-[#eee]">
-    <div class="max-w-screen-lg px-4 py-6 mx-auto space-y-4">
+    <div class="max-w-5xl px-4 py-6 mx-auto space-y-4">
         <div class="space-y-2 md:flex md:justify-between">
             <div>
                 <h1 class="text-2xl font-semibold">Marquee</h1>
