@@ -390,13 +390,12 @@
 </div>
 
 <style>
-    .shiki--code--block {
+    :global(.shiki--code--block) {
         width: 100%;
     }
-
-    pre {
+    :global(pre) {
         z-index: 1;
-        padding: 24px;
+        padding: 16px;
         border-radius: 10px;
         overflow-x: auto;
         -ms-overflow-style: none;
@@ -404,8 +403,7 @@
         position: relative;
         background-color: #f9f9f9 !important;
     }
-
-    code {
+    :global(code) {
         display: block;
         line-height: 1.7;
         font-size: 15px;
