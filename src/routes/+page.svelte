@@ -18,13 +18,33 @@
         reducedMotionSnippet,
     } from "../utils/snippets/index.js";
     import { transformerCopyButton } from "../utils/transformer-copy-button.js";
-
+    import { onMount } from "svelte";
     interface TestimonialProps {
         name: string;
         title: string;
         avatar: string;
         content: string;
     }
+    onMount(() => {
+        const handler = (e: MouseEvent) => {
+            const btn = (e.target as Element).closest(
+                ".shiki-transformer-button-copy",
+            );
+            if (!btn) return;
+
+            const code = (btn as HTMLElement).dataset.code ?? "";
+            navigator.clipboard.writeText(code);
+            btn.classList.add("shiki-transformer-button-copied");
+            btn.setAttribute("aria-pressed", "true");
+            setTimeout(() => {
+                btn.classList.remove("shiki-transformer-button-copied");
+                btn.setAttribute("aria-pressed", "false");
+            }, 3000);
+        };
+
+        document.addEventListener("click", handler);
+        return () => document.removeEventListener("click", handler);
+    });
     const testimonials: TestimonialProps[] = [
         {
             name: "Selemondev",

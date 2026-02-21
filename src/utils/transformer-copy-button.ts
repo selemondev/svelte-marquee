@@ -30,12 +30,6 @@ export function transformerCopyButton(
           "aria-label": "Copy to clipboard",
           "aria-live": "polite",
           "data-code": removeCodeAnnotations(this.source),
-          onclick: `
-                navigator.clipboard.writeText(this.dataset.code);
-                this.classList.add('shiki-transformer-button-copied');
-                this.setAttribute('aria-pressed', 'true');
-                setTimeout(() => { this.classList.remove('shiki-transformer-button-copied'); this.setAttribute('aria-pressed', 'false');}, ${options.duration})
-                `,
         },
         [h("span", { class: "ready" }), h("span", { class: "success" })],
       );
