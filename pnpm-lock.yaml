@@ -32,13 +32,13 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^6.1.1
-        version: 6.1.1(@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))
+        version: 6.1.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))
       '@sveltejs/adapter-vercel':
         specifier: ^5.10.3
-        version: 5.10.3(@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(rollup@4.62.2)
+        version: 5.10.3(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(rollup@4.62.2)
       '@sveltejs/kit':
         specifier: ^2.53.0
-        version: 2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
+        version: 2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
       '@sveltejs/package':
         specifier: ^2.5.7
         version: 2.5.7(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)
@@ -662,11 +662,11 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@standard-schema/spec@1.0.0':
-    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@sveltejs/acorn-typescript@1.0.5':
-    resolution: {integrity: sha512-IwQk4yfwLdibDlrXVE04jTZYlLnwsTT2PIOQQGNLWfjavGifnk1JD1LcZjZaBTRcxZu2FfPfNLOE04DSu9lqtQ==}
+  '@sveltejs/acorn-typescript@1.0.11':
+    resolution: {integrity: sha512-LFuZUkjJ9iF7JZye/aG5XM0SFcQ5VyL0oVX4WJ9dc0Va3R3s0OauX1BESVCb+YN/ol8TAfqGDDAQsTG627Y5kw==}
     peerDependencies:
       acorn: ^8.9.0
 
@@ -685,15 +685,15 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
-  '@sveltejs/kit@2.53.0':
-    resolution: {integrity: sha512-Brh/9h8QEg7rWIj+Nnz/2sC49NUeS8g3Qd9H5dTO3EbWG8vCEUl06jE+r5jQVDMHdr1swmCkwZkONFsWelGTpQ==}
+  '@sveltejs/kit@2.60.1':
+    resolution: {integrity: sha512-mQjlkNo+rJvpln7V2IGY2j99BqhcFbS4UN0AQNKNYfhBAFZTuCDAdW3a1sgf330mvtNvsBXn3HpAhcmvdJTcIQ==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.0.0
       '@sveltejs/vite-plugin-svelte': ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0 || ^7.0.0
       svelte: ^4.0.0 || ^5.0.0-next.0
-      typescript: ^5.3.3
+      typescript: ^5.3.3 || ^6.0.0
       vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0 || ^8.0.0
     peerDependenciesMeta:
       '@opentelemetry/api':
@@ -958,13 +958,13 @@ packages:
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
 
-  acorn@8.15.0:
-    resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
+  acorn@8.16.0:
+    resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  acorn@8.16.0:
-    resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
+  acorn@8.17.0:
+    resolution: {integrity: sha512-xRQbDb9BnwDafYNn6Vwl839DYVjqXYb1XVGtWAZ1kcDc6iwAL4hg3B1dZlRiuENFeO2H53gFG3in621AdERVAg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -1152,11 +1152,11 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  devalue@5.6.3:
-    resolution: {integrity: sha512-nc7XjUU/2Lb+SvEFVGcWLiKkzfw8+qHI7zn8WYXKkLMgfGSHbgCEaR6bJpev8Cm6Rmrb19Gfd/tZvGqx9is3wg==}
-
   devalue@5.8.1:
     resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
+
+  devalue@5.8.2:
+    resolution: {integrity: sha512-DObPPAfdtFbXjxLqK8s2Xk9ZuWz5+ZoFEhC7J76es4GU/rEiXwHTmbImoCdyoCOcBH1UF3+Cz6Z2sYD4hyl5TA==}
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
@@ -1900,8 +1900,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  set-cookie-parser@3.0.1:
-    resolution: {integrity: sha512-n7Z7dXZhJbwuAHhNzkTti6Aw9QDDjZtm3JTpTGATIdNzdQz5GuFs22w90BcvF4INfnrL5xrX3oGsuqO5Dx3A1Q==}
+  set-cookie-parser@3.1.2:
+    resolution: {integrity: sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -1924,8 +1924,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  sirv@3.0.1:
-    resolution: {integrity: sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==}
+  sirv@3.0.2:
+    resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
     engines: {node: '>=18'}
 
   slash@3.0.0:
@@ -2615,23 +2615,23 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@standard-schema/spec@1.0.0': {}
+  '@standard-schema/spec@1.1.0': {}
 
-  '@sveltejs/acorn-typescript@1.0.5(acorn@8.15.0)':
+  '@sveltejs/acorn-typescript@1.0.11(acorn@8.17.0)':
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.17.0
 
   '@sveltejs/acorn-typescript@1.0.9(acorn@8.16.0)':
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/adapter-auto@6.1.1(@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))':
+  '@sveltejs/adapter-auto@6.1.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))':
     dependencies:
-      '@sveltejs/kit': 2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
+      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
 
-  '@sveltejs/adapter-vercel@5.10.3(@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(rollup@4.62.2)':
+  '@sveltejs/adapter-vercel@5.10.3(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(rollup@4.62.2)':
     dependencies:
-      '@sveltejs/kit': 2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
+      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
       '@vercel/nft': 0.30.1(rollup@4.62.2)
       esbuild: 0.25.9
     transitivePeerDependencies:
@@ -2639,21 +2639,21 @@ snapshots:
       - rollup
       - supports-color
 
-  '@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))':
+  '@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)))(svelte@5.55.7(@typescript-eslint/types@8.56.0))(typescript@5.9.3)(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))':
     dependencies:
-      '@standard-schema/spec': 1.0.0
-      '@sveltejs/acorn-typescript': 1.0.5(acorn@8.15.0)
+      '@standard-schema/spec': 1.1.0
+      '@sveltejs/acorn-typescript': 1.0.11(acorn@8.17.0)
       '@sveltejs/vite-plugin-svelte': 4.0.4(svelte@5.55.7(@typescript-eslint/types@8.56.0))(vite@6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
       '@types/cookie': 0.6.0
-      acorn: 8.15.0
+      acorn: 8.17.0
       cookie: 0.6.0
-      devalue: 5.6.3
+      devalue: 5.8.2
       esm-env: 1.2.2
       kleur: 4.1.5
       magic-string: 0.30.21
       mrmime: 2.0.1
-      set-cookie-parser: 3.0.1
-      sirv: 3.0.1
+      set-cookie-parser: 3.1.2
+      sirv: 3.0.2
       svelte: 5.55.7(@typescript-eslint/types@8.56.0)
       vite: 6.4.3(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2)
     optionalDependencies:
@@ -2917,8 +2917,8 @@ snapshots:
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0
       '@rollup/pluginutils': 5.2.0(rollup@4.62.2)
-      acorn: 8.16.0
-      acorn-import-attributes: 1.9.5(acorn@8.16.0)
+      acorn: 8.17.0
+      acorn-import-attributes: 1.9.5(acorn@8.17.0)
       async-sema: 3.1.1
       bindings: 1.5.0
       estree-walker: 2.0.2
@@ -2934,17 +2934,17 @@ snapshots:
 
   abbrev@3.0.1: {}
 
-  acorn-import-attributes@1.9.5(acorn@8.16.0):
+  acorn-import-attributes@1.9.5(acorn@8.17.0):
     dependencies:
-      acorn: 8.16.0
+      acorn: 8.17.0
 
-  acorn-jsx@5.3.2(acorn@8.16.0):
+  acorn-jsx@5.3.2(acorn@8.17.0):
     dependencies:
-      acorn: 8.16.0
-
-  acorn@8.15.0: {}
+      acorn: 8.17.0
 
   acorn@8.16.0: {}
+
+  acorn@8.17.0: {}
 
   agent-base@7.1.4: {}
 
@@ -3086,9 +3086,9 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  devalue@5.6.3: {}
-
   devalue@5.8.1: {}
+
+  devalue@5.8.2: {}
 
   devlop@1.1.0:
     dependencies:
@@ -3260,14 +3260,14 @@ snapshots:
 
   espree@10.4.0:
     dependencies:
-      acorn: 8.16.0
-      acorn-jsx: 5.3.2(acorn@8.16.0)
+      acorn: 8.17.0
+      acorn-jsx: 5.3.2(acorn@8.17.0)
       eslint-visitor-keys: 4.2.1
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.16.0
-      acorn-jsx: 5.3.2(acorn@8.16.0)
+      acorn: 8.17.0
+      acorn-jsx: 5.3.2(acorn@8.17.0)
       eslint-visitor-keys: 3.4.3
 
   esquery@1.6.0:
@@ -3873,7 +3873,7 @@ snapshots:
 
   semver@7.7.3: {}
 
-  set-cookie-parser@3.0.1: {}
+  set-cookie-parser@3.1.2: {}
 
   shebang-command@2.0.0:
     dependencies:
@@ -3900,7 +3900,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  sirv@3.0.1:
+  sirv@3.0.2:
     dependencies:
       '@polka/url': 1.0.0-next.29
       mrmime: 2.0.1
