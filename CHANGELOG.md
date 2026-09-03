@@ -1,6 +1,46 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.1.4...v0.1.5)
+
+### 🚀 Enhancements
+
+- **docs:** Redesign documentation site ([2e83c21](https://github.com/selemondev/svelte-marquee/commit/2e83c21))
+
+### 🩹 Fixes
+
+- Copy button click event ([ff22684](https://github.com/selemondev/svelte-marquee/commit/ff22684))
+- Enable corepack on Vercel and bound Node engine range ([a363ddd](https://github.com/selemondev/svelte-marquee/commit/a363ddd))
+- **docs:** Tighten gap between section titles and first rule ([cb7a900](https://github.com/selemondev/svelte-marquee/commit/cb7a900))
+
+### 💅 Refactors
+
+- Codebase ([c15e472](https://github.com/selemondev/svelte-marquee/commit/c15e472))
+- Codebase ([a1af910](https://github.com/selemondev/svelte-marquee/commit/a1af910))
+- Code-block lang ([1e631a7](https://github.com/selemondev/svelte-marquee/commit/1e631a7))
+
+### 🏡 Chore
+
+- **release:** V0.1.3 ([58ddc02](https://github.com/selemondev/svelte-marquee/commit/58ddc02))
+- **release:** V0.1.4 ([f73dec1](https://github.com/selemondev/svelte-marquee/commit/f73dec1))
+- Update dependencies ([98b8cb9](https://github.com/selemondev/svelte-marquee/commit/98b8cb9))
+- Make package.json production ready ([61855d6](https://github.com/selemondev/svelte-marquee/commit/61855d6))
+- Migrate to ESLint 9 flat config and add CI ([880bc42](https://github.com/selemondev/svelte-marquee/commit/880bc42))
+
+### 🎨 Styles
+
+- Fix overflow ([835cc3d](https://github.com/selemondev/svelte-marquee/commit/835cc3d))
+
+### 🤖 CI
+
+- Bump checkout and pnpm/action-setup to Node 24 majors ([9f8b438](https://github.com/selemondev/svelte-marquee/commit/9f8b438))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.4
 
 [compare changes](https://github.com/selemondev/svelte-marquee/compare/v0.1.3...v0.1.4)
