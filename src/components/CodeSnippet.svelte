@@ -1,0 +1,56 @@
+<script lang="ts">
+    import CodeBlock from "shiki-block-svelte";
+    import type { BundledLanguage } from "shiki";
+    import { transformerCopyButton } from "../utils/transformer-copy-button.js";
+
+    let { code, lang = "svelte" }: { code: string; lang?: BundledLanguage } = $props();
+
+    const icon = (paths: string) =>
+        `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(160,160,165,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E${paths}%3C/svg%3E`;
+
+    const transformers = [
+        transformerCopyButton({
+            duration: 2000,
+            display: "ready",
+            copyIcon: icon(""),
+            successIcon: icon("%3Cpath d='m9 14 2 2 4-4'/%3E"),
+            cssVariables: `:root {
+  --button-border-color: rgb(255 255 255 / 0.12);
+  --button-bg: rgb(255 255 255 / 0.04);
+  --button-bg-hover: rgb(255 255 255 / 0.1);
+  --button-top: 10px;
+  --button-right: 10px;
+  --button-z-index: 10;
+  --button-radius: 6px;
+  --button-size: 30px;
+  --icon-size: 18px;
+}`,
+        }),
+    ];
+</script>
+
+<div class="code-snippet overflow-hidden rounded-lg border border-line bg-[#0d0d0f]">
+    <CodeBlock {code} {lang} theme="vitesse-black" {transformers} />
+</div>
+
+<style>
+    .code-snippet :global(.shiki--code--block) {
+        min-height: 3.25rem;
+    }
+    .code-snippet :global(pre) {
+        position: relative;
+        margin: 0;
+        padding: 14px 16px;
+        background: transparent !important;
+    }
+    .code-snippet :global(code) {
+        display: block;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(255 255 255 / 0.2) transparent;
+        font-family: var(--font-mono);
+        font-size: 13.5px;
+        line-height: 1.7;
+    }
+</style>

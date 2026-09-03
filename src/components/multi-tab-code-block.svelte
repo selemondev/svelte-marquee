@@ -1,63 +1,30 @@
 <script lang="ts">
-    import CodeBlock from "shiki-block-svelte";
-    import { transformerCopyButton } from "../utils/transformer-copy-button.js";
+    import CodeSnippet from "./CodeSnippet.svelte";
 
-    const packageManagers = ["bun", "pnpm", "yarn", "npm"];
-    let selectedPackageManager = $state("bun");
-    let { lang, bun, pnpm, yarn, npm } = $props();
-    const getInstallCmd = () => {
-        switch (selectedPackageManager) {
-            case "bun":
-                return bun;
-
-            case "pnpm":
-                return pnpm;
-
-            case "yarn":
-                return yarn;
-
-            case "npm":
-                return npm;
-
-            default:
-                return npm;
-        }
-    };
+    let { commands }: { commands: Record<string, string> } = $props();
+    const managers = $derived(Object.keys(commands));
+    let selected = $state<string | null>(null);
+    const active = $derived(selected ?? managers[0]);
 </script>
 
-<section class="bg-white rounded-md">
-    <div class="flex flex-col space-y-1">
-        <div class="flex items-center space-x-2 py-2 px-4">
-            {#each packageManagers as packageManager (packageManager)}
-                <button
-                    type="button"
-                    onclick={() => (selectedPackageManager = packageManager)}
-                    class={[
-                        "rounded-md text-sm text-black py-0.5 px-1 border-2 border-transparent",
-                        selectedPackageManager === packageManager
-                            ? "outline bg-gray-100 outline-gray-200"
-                            : "outline-none",
-                    ]}
-                >
-                    {packageManager}
-                </button>
-            {/each}
-        </div>
-        <span class="bg-gray-200 w-full h-px"></span>
-        <CodeBlock
-            {lang}
-            themes={{
-                light: "vitesse-light",
-                dark: "vitesse-dark",
-            }}
-            code={getInstallCmd()}
-            transformers={[
-              transformerCopyButton({
-                    duration: 2000,
-                    successIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m9 14 2 2 4-4'/%3E%3C/svg%3E`,
-                    copyIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Crect width='8' height='4' x='8' y='2' rx='1' ry='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3C/svg%3E`,
-                }),
-            ]}
-        />
+<div class="overflow-hidden rounded-lg border border-line bg-[#0d0d0f]">
+    <div class="flex items-center gap-1 border-b border-line px-2 py-1.5" role="tablist" aria-label="Package manager">
+        {#each managers as manager (manager)}
+            <button
+                type="button"
+                role="tab"
+                aria-selected={active === manager}
+                onclick={() => (selected = manager)}
+                class={[
+                    "rounded-md px-2.5 py-1 font-mono text-xs transition-colors",
+                    active === manager ? "bg-white/8 text-fg" : "text-muted hover:bg-white/5 hover:text-fg",
+                ]}
+            >
+                {manager}
+            </button>
+        {/each}
     </div>
-</section>
+    <div class="[&>div]:rounded-none [&>div]:border-0">
+        <CodeSnippet code={commands[active]} lang="bash" />
+    </div>
+</div>
