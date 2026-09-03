@@ -161,7 +161,7 @@
                 A Beautiful Marquee component for Svelte.
             </p>
             <div class="mx-auto mt-10 max-w-md text-left">
-                <CodeSnippet code={installCommands.npm} lang="bash" />
+                <CodeSnippet code={installCommands.bun} lang="bash" />
             </div>
         </div>
 

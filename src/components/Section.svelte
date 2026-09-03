@@ -21,7 +21,7 @@
         <span class="handle top-0 left-0"></span>
         <span class="handle top-0 left-full"></span>
         {#if title}
-            <header class="mb-10 max-w-2xl md:mb-14">
+            <header class="mb-6 max-w-2xl">
                 {#if eyebrow}
                     <p class="mb-3 font-mono text-xs tracking-widest text-accent uppercase">
                         {eyebrow}
