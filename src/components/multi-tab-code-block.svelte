@@ -28,7 +28,7 @@
 <section class="bg-white rounded-md">
     <div class="flex flex-col space-y-1">
         <div class="flex items-center space-x-2 py-2 px-4">
-            {#each packageManagers as packageManager}
+            {#each packageManagers as packageManager (packageManager)}
                 <button
                     type="button"
                     onclick={() => (selectedPackageManager = packageManager)}
