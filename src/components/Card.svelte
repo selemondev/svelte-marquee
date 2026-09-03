@@ -1,21 +1,22 @@
 <script lang="ts">
-	import FiveStar from './FiveStar.svelte';
-	export let name: string;
-	export let avatar: string;
-	export let title: string;
-	export let content: string;
+    import FiveStar from "./FiveStar.svelte";
+
+    let {
+        name,
+        avatar,
+        title,
+        content,
+    }: { name: string; avatar: string; title: string; content: string } = $props();
 </script>
 
-<div
-	class="h-56 px-5 py-3 space-y-3 text-sm bg-white rounded-lg shadow-sm w-80"
->
-	<div class="flex items-center gap-2">
-		<img src={avatar} alt={title} class="rounded-full size-8" />
-		<div>
-			<div class="font-medium">{name}</div>
-			<div class="text-xs text-stone-600">{title}</div>
-		</div>
-	</div>
-	<FiveStar />
-	<div class="whitespace-pre-line text-stone-600">{content}</div>
+<div class="flex h-52 w-80 flex-col gap-3 rounded-lg border border-line bg-[#111113] px-5 py-4 text-sm">
+    <div class="flex items-center gap-3">
+        <img src={avatar} alt="" loading="lazy" class="size-9 rounded-full ring-1 ring-white/10" />
+        <div>
+            <div class="font-medium">{name}</div>
+            <div class="text-xs text-muted">{title}</div>
+        </div>
+    </div>
+    <FiveStar />
+    <p class="line-clamp-4 text-muted">{content}</p>
 </div>
