@@ -6,6 +6,8 @@
     import CodeSnippet from "../components/CodeSnippet.svelte";
     import Example from "../components/Example.svelte";
     import GithubIcon from "../components/icons/GithubIcon.svelte";
+    import MoonIcon from "../components/icons/MoonIcon.svelte";
+    import SunIcon from "../components/icons/SunIcon.svelte";
     import MultiTabCodeBlock from "../components/multi-tab-code-block.svelte";
     import Section from "../components/Section.svelte";
     import {
@@ -21,7 +23,21 @@
 
     const repo = "https://github.com/selemondev/svelte-marquee";
 
+    // Initial value is resolved by the inline script in app.html; mirrored here for aria-pressed.
+    let dark = $state(false);
+
+    function toggleTheme() {
+        dark = document.documentElement.classList.toggle("dark");
+        document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')!.content = dark ? "#0a0a0b" : "#fcfcfc";
+        try {
+            localStorage.setItem("theme", dark ? "dark" : "light");
+        } catch {
+            // Persistence unavailable; the toggle still works for this page.
+        }
+    }
+
     onMount(() => {
+        dark = document.documentElement.classList.contains("dark");
         const handler = (e: MouseEvent) => {
             const btn = (e.target as Element).closest<HTMLElement>(".shiki-transformer-button-copy");
             if (!btn) return;
@@ -91,7 +107,6 @@
 <svelte:head>
     <title>Svelte Marquee</title>
     <meta name="description" content="A Beautiful Marquee component for Svelte." />
-    <meta name="theme-color" content="#0a0a0b" />
 </svelte:head>
 
 {#snippet testimonialCards()}
@@ -125,7 +140,7 @@
                     href="https://www.npmjs.com/package/@selemondev/svelte-marquee"
                     target="_blank"
                     rel="noreferrer"
-                    class="hidden rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-white/25 hover:text-fg sm:inline-block"
+                    class="hidden rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-line-strong hover:text-fg sm:inline-block"
                 >
                     v{pkg.version}
                 </a>
@@ -134,10 +149,20 @@
                     target="_blank"
                     rel="noreferrer"
                     aria-label="GitHub repository"
-                    class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-white/25 hover:text-fg"
+                    class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg"
                 >
                     <GithubIcon class="size-4" />
                 </a>
+                <button
+                    type="button"
+                    onclick={toggleTheme}
+                    aria-label="Toggle color scheme"
+                    aria-pressed={dark}
+                    class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg"
+                >
+                    <SunIcon class="size-4 dark:hidden" />
+                    <MoonIcon class="hidden size-4 dark:block" />
+                </button>
             </div>
         </div>
     </header>
@@ -149,7 +174,7 @@
                 href="{repo}/releases"
                 target="_blank"
                 rel="noreferrer"
-                class="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1 pr-3 pl-1.5 font-mono text-xs text-muted transition-colors hover:border-white/25 hover:text-fg"
+                class="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1 pr-3 pl-1.5 font-mono text-xs text-muted transition-colors hover:border-line-strong hover:text-fg"
             >
                 <span class="rounded-full bg-accent/15 px-2 py-0.5 text-accent">v{pkg.version}</span>
                 Svelte 5 · Tailwind v4
@@ -192,7 +217,7 @@
                         <h3 class="text-xl font-semibold tracking-tight">Install the package</h3>
                         <p class="text-sm text-muted">
                             Or copy
-                            <a class="text-fg underline decoration-white/30 underline-offset-4 hover:decoration-white" href="{repo}/blob/master/src/lib/Marquee.svelte" target="_blank" rel="noreferrer">Marquee.svelte</a>
+                            <a class="text-fg underline decoration-line-strong underline-offset-4 hover:decoration-fg" href="{repo}/blob/master/src/lib/Marquee.svelte" target="_blank" rel="noreferrer">Marquee.svelte</a>
                             into your project.
                         </p>
                     </div>
@@ -268,7 +293,7 @@
                         <img
                             alt={logo}
                             src="https://www.vectorlogo.zone/logos/{logo}/{logo}-ar21.svg"
-                            class="h-12 w-auto opacity-60 brightness-0 invert transition-opacity hover:opacity-100"
+                            class="h-12 w-auto opacity-60 brightness-0 transition-opacity hover:opacity-100 dark:invert"
                             loading="lazy"
                         />
                     {/each}

@@ -1,16 +1,22 @@
 @import "tailwindcss";
 @plugin 'tailwindcss-animate';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light palette is the default; `html.dark` overrides below. */
 @theme {
     --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-    --color-bg: #0a0a0b;
-    --color-fg: #ededef;
-    --color-muted: #8f8f95;
-    --color-line: rgb(255 255 255 / 0.1);
-    --color-surface: rgb(255 255 255 / 0.03);
-    --color-accent: #ff6a3d;
+    --color-bg: #fcfcfc;
+    --color-fg: #18181b;
+    --color-muted: #6b6b73;
+    --color-line: rgb(0 0 0 / 0.1);
+    --color-line-strong: rgb(0 0 0 / 0.3);
+    --color-surface: rgb(0 0 0 / 0.03);
+    --color-card: #ffffff;
+    --color-code: #f6f6f7;
+    --color-accent: #e4531f;
 
     --animate-marquee-left: marquee-left var(--duration, 40s) linear infinite;
     --animate-marquee-up: marquee-up var(--duration, 40s) linear infinite;
@@ -34,6 +40,18 @@
     }
 }
 
+html.dark {
+    --color-bg: #0a0a0b;
+    --color-fg: #ededef;
+    --color-muted: #8f8f95;
+    --color-line: rgb(255 255 255 / 0.1);
+    --color-line-strong: rgb(255 255 255 / 0.28);
+    --color-surface: rgb(255 255 255 / 0.03);
+    --color-card: #111113;
+    --color-code: #0d0d0f;
+    --color-accent: #ff6a3d;
+}
+
 /* Dashed rail drawn with a gradient so it stays crisp at 1px. */
 @utility hairline-y {
     width: 1px;
@@ -46,16 +64,20 @@
     width: 7px;
     height: 7px;
     background: var(--color-bg);
-    border: 1px solid rgb(255 255 255 / 0.28);
+    border: 1px solid var(--color-line-strong);
     transform: translate(-50%, -50%);
 }
 
 html {
-    color-scheme: dark;
+    color-scheme: light;
     background: var(--color-bg);
     color: var(--color-fg);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+}
+
+html.dark {
+    color-scheme: dark;
 }
 
 ::selection {

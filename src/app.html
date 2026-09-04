@@ -4,6 +4,21 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="https://api.iconify.design/fluent:weather-blowing-snow-24-regular.svg?color=%23d13400" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Theme: apply stored/system scheme before first paint; +page.svelte keeps this in sync on toggle. -->
+		<meta name="theme-color" content="#fcfcfc" />
+		<script>
+			(() => {
+				let stored = null;
+				try {
+					stored = localStorage.getItem("theme");
+				} catch {
+					// Storage blocked: fall through to the system preference.
+				}
+				const dark = stored ? stored === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+				document.documentElement.classList.toggle("dark", dark);
+				document.querySelector('meta[name="theme-color"]').content = dark ? "#0a0a0b" : "#fcfcfc";
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
