@@ -125,7 +125,7 @@
                     href="https://www.npmjs.com/package/@selemondev/svelte-marquee"
                     target="_blank"
                     rel="noreferrer"
-                    class="hidden rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-white/25 hover:text-fg sm:inline-block"
+                    class="hidden rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-line-strong hover:text-fg sm:inline-block"
                 >
                     v{pkg.version}
                 </a>
@@ -134,7 +134,7 @@
                     target="_blank"
                     rel="noreferrer"
                     aria-label="GitHub repository"
-                    class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-white/25 hover:text-fg"
+                    class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg"
                 >
                     <GithubIcon class="size-4" />
                 </a>
@@ -149,7 +149,7 @@
                 href="{repo}/releases"
                 target="_blank"
                 rel="noreferrer"
-                class="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1 pr-3 pl-1.5 font-mono text-xs text-muted transition-colors hover:border-white/25 hover:text-fg"
+                class="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1 pr-3 pl-1.5 font-mono text-xs text-muted transition-colors hover:border-line-strong hover:text-fg"
             >
                 <span class="rounded-full bg-accent/15 px-2 py-0.5 text-accent">v{pkg.version}</span>
                 Svelte 5 · Tailwind v4
@@ -192,7 +192,7 @@
                         <h3 class="text-xl font-semibold tracking-tight">Install the package</h3>
                         <p class="text-sm text-muted">
                             Or copy
-                            <a class="text-fg underline decoration-white/30 underline-offset-4 hover:decoration-white" href="{repo}/blob/master/src/lib/Marquee.svelte" target="_blank" rel="noreferrer">Marquee.svelte</a>
+                            <a class="text-fg underline decoration-line-strong underline-offset-4 hover:decoration-fg" href="{repo}/blob/master/src/lib/Marquee.svelte" target="_blank" rel="noreferrer">Marquee.svelte</a>
                             into your project.
                         </p>
                     </div>

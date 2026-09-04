@@ -29,7 +29,7 @@
     ];
 </script>
 
-<div class="code-snippet overflow-hidden rounded-lg border border-line bg-[#0d0d0f]">
+<div class="code-snippet overflow-hidden rounded-lg border border-line bg-code">
     <CodeBlock {code} {lang} theme="vitesse-black" {transformers} />
 </div>
 

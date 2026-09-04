@@ -7,7 +7,7 @@
     const active = $derived(selected ?? managers[0]);
 </script>
 
-<div class="overflow-hidden rounded-lg border border-line bg-[#0d0d0f]">
+<div class="overflow-hidden rounded-lg border border-line bg-code">
     <div class="flex items-center gap-1 border-b border-line px-2 py-1.5" role="tablist" aria-label="Package manager">
         {#each managers as manager (manager)}
             <button
@@ -17,7 +17,7 @@
                 onclick={() => (selected = manager)}
                 class={[
                     "rounded-md px-2.5 py-1 font-mono text-xs transition-colors",
-                    active === manager ? "bg-white/8 text-fg" : "text-muted hover:bg-white/5 hover:text-fg",
+                    active === manager ? "bg-fg/8 text-fg" : "text-muted hover:bg-fg/5 hover:text-fg",
                 ]}
             >
                 {manager}
