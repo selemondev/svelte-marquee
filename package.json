@@ -20,7 +20,7 @@
     "typescript",
     "svelte-marquee"
   ],
-  "packageManager": "pnpm@10.34.5",
+  "packageManager": "pnpm@11.25.0",
   "engines": {
     "node": "^22 || ^24",
     "pnpm": ">=10"
