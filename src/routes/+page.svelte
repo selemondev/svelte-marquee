@@ -23,12 +23,21 @@
 
     const repo = "https://github.com/selemondev/svelte-marquee";
 
+    // Initial value is resolved by the inline script in app.html; mirrored here for aria-pressed.
+    let dark = $state(false);
+
     function toggleTheme() {
-        const dark = document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", dark ? "dark" : "light");
+        dark = document.documentElement.classList.toggle("dark");
+        document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')!.content = dark ? "#0a0a0b" : "#fcfcfc";
+        try {
+            localStorage.setItem("theme", dark ? "dark" : "light");
+        } catch {
+            // Persistence unavailable; the toggle still works for this page.
+        }
     }
 
     onMount(() => {
+        dark = document.documentElement.classList.contains("dark");
         const handler = (e: MouseEvent) => {
             const btn = (e.target as Element).closest<HTMLElement>(".shiki-transformer-button-copy");
             if (!btn) return;
@@ -98,8 +107,6 @@
 <svelte:head>
     <title>Svelte Marquee</title>
     <meta name="description" content="A Beautiful Marquee component for Svelte." />
-    <meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
 </svelte:head>
 
 {#snippet testimonialCards()}
@@ -150,6 +157,7 @@
                     type="button"
                     onclick={toggleTheme}
                     aria-label="Toggle color scheme"
+                    aria-pressed={dark}
                     class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg"
                 >
                     <SunIcon class="size-4 dark:hidden" />
