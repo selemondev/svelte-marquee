@@ -6,6 +6,8 @@
     import CodeSnippet from "../components/CodeSnippet.svelte";
     import Example from "../components/Example.svelte";
     import GithubIcon from "../components/icons/GithubIcon.svelte";
+    import MoonIcon from "../components/icons/MoonIcon.svelte";
+    import SunIcon from "../components/icons/SunIcon.svelte";
     import MultiTabCodeBlock from "../components/multi-tab-code-block.svelte";
     import Section from "../components/Section.svelte";
     import {
@@ -20,6 +22,11 @@
     } from "../utils/snippets/index.js";
 
     const repo = "https://github.com/selemondev/svelte-marquee";
+
+    function toggleTheme() {
+        const dark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    }
 
     onMount(() => {
         const handler = (e: MouseEvent) => {
@@ -91,7 +98,8 @@
 <svelte:head>
     <title>Svelte Marquee</title>
     <meta name="description" content="A Beautiful Marquee component for Svelte." />
-    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
 </svelte:head>
 
 {#snippet testimonialCards()}
@@ -138,6 +146,15 @@
                 >
                     <GithubIcon class="size-4" />
                 </a>
+                <button
+                    type="button"
+                    onclick={toggleTheme}
+                    aria-label="Toggle color scheme"
+                    class="inline-flex size-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg"
+                >
+                    <SunIcon class="size-4 dark:hidden" />
+                    <MoonIcon class="hidden size-4 dark:block" />
+                </button>
             </div>
         </div>
     </header>

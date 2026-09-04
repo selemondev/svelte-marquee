@@ -4,6 +4,14 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="https://api.iconify.design/fluent:weather-blowing-snow-24-regular.svg?color=%23d13400" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Apply the stored/system theme before first paint to avoid a flash. -->
+		<script>
+			(() => {
+				const stored = localStorage.getItem("theme");
+				const dark = stored ? stored === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+				document.documentElement.classList.toggle("dark", dark);
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
