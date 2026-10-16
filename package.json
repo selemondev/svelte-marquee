@@ -74,7 +74,7 @@
     "@sveltejs/adapter-vercel": "^5.10.3",
     "@sveltejs/kit": "^2.70.3",
     "@sveltejs/package": "^2.5.8",
-    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
