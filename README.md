@@ -80,4 +80,4 @@ This library is made specifically for Tailwind users, however you can also use v
 
 ## License
 
-Released under [MIT](/LICENSE) by [@selemondev](https://github.com/selemondev).
+Released under [MIT](/LICENSE) by [Selemon Brahanu](https://selemon.dev).
